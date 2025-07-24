@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksamples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 16px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 5rem;
+            font-weight: 200;
+            margin-bottom: 30px;
+            letter-spacing: -3px;
+            color: #000000;
+        }
+
+        .header-content::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: #000000;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #f5f5f5;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid #d3d3d3;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.2),
+                0 0 0 1px #d3d3d3,
+                inset 0 1px 0 #ffffff;
+            border-color: #b0b0b0;
+        }
+
+        .project-card:nth-child(even) {
+            margin-top: 80px;
+        }
+
+        .project-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.08);
+        }
+
+        .project-content {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        .project-category {
+            font-size: 0.85rem;
+            color: #333333;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-description {
+            color: #444444;
+            line-height: 1.7;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .view-btn {
+            display: none;
+        }
+
+        .rerter-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #1d4ed8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .gazelle-bg {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .biossun-bg {
+            background: linear-gradient(135deg, #84cc16 0%, #65a30d 50%, #4d7c0f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .google-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .contact-footer-wrapper {
+            background-color: #4AE54A;
+        }
+
+        .contact-section {
+            padding: 60px 20px 60px;
+            background-color: #4AE54A;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .heading {
+            font-size: 80px;
+            font-weight: bold;
+            color: #2B2B2B;
+            margin-bottom: 40px;
+            line-height: 1;
+        }
+
+        .form-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-left input {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #F5F5F5;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-left input::placeholder {
+            color: #666;
+        }
+
+        .form-right {
+            flex: 1;
+        }
+
+        .form-right textarea {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #F5F5F5;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            resize: none;
+            outline: none;
+        }
+
+        .form-right textarea::placeholder {
+            color: #666;
+        }
+
+        .button-bar {
+            background-color: #1A1A2E;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .button-bar button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .connected-text {
+            font-size: 80px;
+            font-weight: bold;
+            color: #2B2B2B;
+            margin-bottom: 40px;
+            line-height: 1;
+            text-align: right;
+        }
+
+        .social-section h3 {
+            font-size: 24px;
+            color: #2B2B2B;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #2B2B2B;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+
+        .social-links a:hover {
+            text-decoration: none;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-top: 0;
+            font-size: 180px;
+        }
+
+        .footer-text {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .project-card:nth-child(even) {
+                margin-top: 0;
+            }
+            
+            .header-content h1 {
+                font-size: 3rem;
+            }
+            
+            .container {
+                padding: 40px 15px;
+            }
+
+            .contact-section {
+                padding: 30px 15px 30px;
+            }
+
+            .heading, .connected-text {
+                font-size: 50px;
+            }
+
+            .form-container {
+                flex-direction: column;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .connected-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">SYLESH VEMURI ©</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="worksamples.html" class="active">WORKSAMPLES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="header-content">
+            <h1>Our projects</h1>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" onclick="redirectToProject('rerter')">
+                <div class="project-image rerter-bg">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda0e38f71?w=400&h=220&fit=crop" alt="Rerter Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Rerter</h3>
+                    <p class="project-category">Branding & Web design</p>
+                    <p class="project-description">
+                        A brand and comprehensive digital concept for a product design and development 
+                        studio is created. This includes the establishment of a cohesive identity, user-
+                        centric interface, and an engaging user experience that reflect the studio's mission 
+                        and values.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="redirectToProject('gazelle')">
+                <div class="project-image gazelle-bg">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2b6e3c?w=400&h=220&fit=crop" alt="Gazelle Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Gazelle</h3>
+                    <p class="project-category">Branding & Web design</p>
+                    <p class="project-description">
+                        An entire concept for a hat shop brand is created. This encompasses the 
+                        development of a unique brand identity, an appealing aesthetic, and a seamless 
+                        shopping experience that resonates with the target audience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="redirectToProject('biossun')">
+                <div class="project-image biossun-bg">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=220&fit=crop" alt="Biossun Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Biossun</h3>
+                    <p class="project-category">Digital product design</p>
+                    <p class="project-description">
+                        A digital product for calculating the accurate costs of building outdoor products 
+                        was created. This tool aims to provide users with precise estimates based on 
+                        customizable options and variables, enhancing their purchasing experience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="redirectToProject('google-play')">
+                <div class="project-image google-bg">
+                    <img src="https://images.unsplash.com/photo-1516321310762-479e93c67b9e?w=400&h=220&fit=crop" alt="Google Play Project">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Google Play</h3>
+                    <p class="project-category">Digital product design</p>
+                    <p class="project-description">
+                        A comprehensive mobile application design and development project focused on 
+                        creating intuitive user experiences for the Google Play ecosystem, emphasizing 
+                        modern design principles and seamless functionality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-footer-wrapper">
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h1 class="heading">Let's get</h1>
+                
+                <form id="contactForm">
+                    <div class="form-container">
+                        <div class="form-left">
+                            <input type="text" id="name" placeholder="Name" required>
+                            <input type="email" id="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-right">
+                            <textarea id="message" placeholder="Message" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="button-bar">
+                        <button type="submit">Send message</button>
+                    </div>
+                </form>
+                
+                <h2 class="connected-text">connected</h2>
+                
+                <div class="social-section">
+                    <h3>Our social media</h3>
+                    <div class="social-links">
+                        <a href="#linkedin">Linkedin</a>
+                        <a href="mailto:hello@retler.com">hello@retler.com</a>
+                        <a href="#schedule">Schedule a call</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-text">SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI</div>
+        </footer>
+    </div>
+
+    <script>
+        function redirectToProject(projectName) {
+            const projectUrls = {
+                'rerter': '/projects/rerter',
+                'gazelle': '/projects/gazelle',
+                'biossun': '/projects/biossun',
+                'google-play': '/projects/google-play'
+            };
+            
+            const url = projectUrls[projectName];
+            if (url) {
+                alert(`Redirecting to ${projectName} project page: ${url}`);
+            }
+        }
+
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function sendToGmail() {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+
+                const subject = encodeURIComponent('New Contact Form Submission');
+                const body = encodeURIComponent(`
+                    Name: ${formData.name}
+                    Email: ${formData.email}
+                    Message: ${formData.message || 'No message'}
+                    Submitted on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+                `);
+
+                window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=syleshvemuri@gmail.com&su=${subject}&body=${body}`;
+            });
+        }
+
+        window.onload = sendToGmail;
+    </script>
+</body>
+</html>
