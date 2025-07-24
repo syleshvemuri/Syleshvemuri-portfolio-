@@ -536,18 +536,21 @@
 
     <script>
         function redirectToProject(projectName) {
-            const projectUrls = {
-                'rerter': '/projects/rerter',
-                'gazelle': '/projects/gazelle',
-                'biossun': '/projects/biossun',
-                'google-play': '/projects/google-play'
-            };
-            
-            const url = projectUrls[projectName];
-            if (url) {
-                alert(`Redirecting to ${projectName} project page: ${url}`);
-            }
-        }
+    const projectUrls = {
+        'rerter': 'sample.html',
+        'gazelle': 'sample2.html',
+        'biossun': '/projects/biossun.html',
+        'google-play': '/projects/google-play.html'
+    };
+    
+    const url = projectUrls[projectName];
+    if (url) {
+        window.location.href = url; // Perform the redirect
+    } else {
+        console.error(`No URL found for project: ${projectName}`);
+        alert(`Project page for ${projectName} not found.`);
+    }
+}
 
         document.documentElement.style.scrollBehavior = 'smooth';
 
