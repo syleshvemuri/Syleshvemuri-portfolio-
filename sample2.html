@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rerter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+        }
+
+        /* Blue top section */
+        .hero-section {
+    background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
+    height: 60vh;
+    color: white;
+    position: relative;
+}
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 16px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #333;
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 0 40px;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 140px;
+            font-weight: 700;
+            line-height: 0.8;
+            margin: 0;
+            letter-spacing: -2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Video container positioned to bridge sections */
+        .video-bridge {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 0 40px;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 5;
+        }
+
+        .video-mockup {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            aspect-ratio: 16/9;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        .discover-more {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .scroll-icon {
+            width: 20px;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-icon::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 1px;
+        }
+
+        /* White bottom section */
+        .content-section {
+            background: #f8f9fa;
+            padding: 300px 40px 80px;
+            color: #333;
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .brief-section {
+            margin-top: 80px;
+        }
+
+        .brief-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .brief-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+            margin: 60px 0;
+        }
+
+        .copies-container {
+            margin-top: 80px;
+        }
+
+        .copy-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .copy-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .copy-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .copy-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .copy-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .copy-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .email-sample {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #444;
+            position: relative;
+        }
+
+        .email-sample::before {
+            content: "📧 Email Preview";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #fafafa;
+            padding: 0 8px;
+            font-size: 11px;
+            color: #666;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-top: 0;
+            font-size: 240px;
+        }
+
+        .footer-text {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 80px;
+            }
+            
+            .header, .hero-content, .video-bridge, .content-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">SYLESH VEMURI ©</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="worksamples.html" class="active">WORKSAMPLES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blue top section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Rerter</h1>
+        </div>
+    </div>
+
+    <!-- Video bridging the sections -->
+    <div class="video-bridge">
+        <div class="video-container">
+            <div class="video-mockup">
+                <img src="https://via.placeholder.com/800x450" alt="Placeholder Image" style="width: 100%; height: auto; object-fit: cover;">
+                
+                <div class="discover-more">
+                    <span>Discover more</span>
+                    <div class="scroll-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- White bottom section -->
+    <div class="content-section">
+        <div class="main-content">
+            <div class="brief-section">
+                <h3 class="brief-title">Brief</h3>
+                <p class="brief-text">
+                    An innovative site was intended to be created where work could be showcased behind a brand name. The whole idea revolves around starting an agency/design studio from scratch, with the goal of attracting companies interested in hiring third-party providers for design services. The site should feature a clean design, clear user flow, and a friendly user experience, while maintaining a visually appealing look and feel. It should not appear as just another template and must incorporate the brand's aesthetics. The goal is for a unique personality to be brought to the site.
+                </p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="copies-container">
+                <div class="copy-card">
+                    <h4 class="copy-title">Email 1: SaaS Product Launch Sequence</h4>
+                    <p class="copy-text"><strong>Problem:</strong> A new B2B SaaS platform needed to generate qualified leads and drive sign-ups for its beta program launch.</p>
+                    <p class="copy-text"><strong>Strategy:</strong> Developed a 3-email sequence focusing on problem-agitation-solution, highlighting key features and social proof in each stage. Aimed for strong CTAs and clear value propositions with personalized messaging.</p>
+                    <p class="copy-text"><strong>Subject:</strong> "Your Workflow is Broken (Here's How We Fix It)"</p>
+                    <div class="email-sample">
+                        Hi [Name],<br><br>
+                        Tired of juggling 12 different tools just to get through your Tuesday?<br><br>
+                        We built [Product] because we were frustrated too. Join 500+ beta users who've already streamlined their workflow and saved 4+ hours per week.<br><br>
+                        ✅ One dashboard for everything<br>
+                        ✅ 50+ integrations ready to go<br>
+                        ✅ Set up in under 5 minutes<br><br>
+                        Ready to reclaim your time?<br><br>
+                        [Get Beta Access - Free for 30 Days]<br><br>
+                        Best,<br>
+                        Sarah
+                    </div>
+                    <p class="copy-text"><strong>Intended Outcome:</strong> Achieved 18% open rate and 8% click-through rate, driving 250+ qualified beta sign-ups in the first week.</p>
+                </div>
+
+                <div class="copy-card">
+                    <h4 class="copy-title">Email 2: E-commerce Flash Sale Campaign</h4>
+                    <p class="copy-text"><strong>Problem:</strong> An online fashion retailer needed to clear end-of-season inventory and boost sales for specific product categories within 48 hours.</p>
+                    <p class="copy-text"><strong>Strategy:</strong> Crafted a scarcity-driven email series with clear discount offers, urgency-building language, and direct links to product categories. Used countdown timers and limited-time messaging.</p>
+                    <p class="copy-text"><strong>Subject:</strong> "FINAL 24 HOURS: 60% Off Everything (Really Everything)"</p>
+                    <div class="email-sample">
+                        [Name], This is it.<br><br>
+                        The biggest sale of the year ends tomorrow at midnight.<br><br>
+                        Your cart is waiting, but sizes are flying off the shelves:<br><br>
+                        🔥 60% off ALL dresses<br>
+                        🔥 60% off ALL shoes<br>
+                        🔥 60% off ALL accessories<br><br>
+                        No exclusions. No minimum purchase. No games.<br><br>
+                        [SHOP NOW - 24 HOURS LEFT]<br><br>
+                        Don't let your favorites sell out,<br>
+                        The Team
+                    </div>
+                    <p class="copy-text"><strong>Intended Outcome:</strong> Generated 32% open rate and 15% click-through rate, resulting in $125K revenue increase during the 48-hour campaign period.</p>
+                </div>
+
+                <div class="copy-card">
+                    <h4 class="copy-title">Email 3: Consulting Service Lead Nurture</h4>
+                    <p class="copy-text"><strong>Problem:</strong> A business consulting firm needed to convert webinar attendees into high-value discovery calls and nurture leads through a longer sales cycle.</p>
+                    <p class="copy-text"><strong>Strategy:</strong> Designed an educational follow-up sequence providing additional value from the webinar while subtly reinforcing expertise. Included case studies and clear next steps for consultation.</p>
+                    <p class="copy-text"><strong>Subject:</strong> "The Growth Strategy That Added $2M in Revenue [Webinar Follow-up]"</p>
+                    <div class="email-sample">
+                        Hi [Name],<br><br>
+                        Thanks for joining yesterday's webinar on scaling revenue.<br><br>
+                        As promised, here's the exact 3-step framework we used to help TechCorp grow from $5M to $7M in just 8 months:<br><br>
+                        Step 1: Identify your highest-value customer segments<br>
+                        Step 2: Create targeted messaging for each segment<br>
+                        Step 3: Build automated nurture sequences<br><br>
+                        Want to see how this applies to YOUR business?<br><br>
+                        [Book Your Free Strategy Call]<br><br>
+                        We'll analyze your current strategy and show you exactly where the biggest opportunities are.<br><br>
+                        Talk soon,<br>
+                        Michael Chen
+                    </div>
+                    <p class="copy-text"><strong>Intended Outcome:</strong> Converted 12% of webinar attendees into discovery calls, with 65% of those calls resulting in $15K+ consulting engagements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-text">SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI</div>
+    </footer>
+
+    <script>
+        document.querySelector('.discover-more').addEventListener('click', function() {
+            document.querySelector('.content-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
