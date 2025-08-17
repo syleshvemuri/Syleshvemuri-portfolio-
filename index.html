@@ -82,7 +82,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             position: relative;
-            margin-bottom: -120px;
             background-color: #fff;
         }
 
@@ -159,7 +158,7 @@
             padding: 15px 0;
             white-space: nowrap;
             overflow: hidden;
-            margin: 40px 0 80px 0;
+            margin: -60px 0 60px 0;
             font-size: 40px;
             position: relative;
         }
@@ -181,6 +180,17 @@
             margin: 0 auto;
             padding: 0 40px;
             margin-bottom: 80px;
+        }
+
+        .services-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000;
+            text-align: center;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .services-grid {
@@ -246,34 +256,11 @@
             transform: scale(1.05);
         }
 
-        .icon-discovery::before {
-            content: '📧';
-            color: white;
-            font-size: 4rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .icon-design::before {
-            content: '📢';
-            color: white;
-            font-size: 4rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .icon-delivery::before {
-            content: '📈';
-            color: white;
-            font-size: 4rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
         }
 
         .service-content {
@@ -510,10 +497,6 @@
             font-weight: 400;
         }
 
-        .bottom-testimonial {
-            display: none;
-        }
-
         .contact-footer-wrapper {
             background-color: #4AE54A;
         }
@@ -670,7 +653,6 @@
             .main-container {
                 grid-template-columns: 1fr;
                 min-height: auto;
-                margin-bottom: 30px;
             }
 
             .left-section {
@@ -722,7 +704,7 @@
             }
 
             .services-marquee {
-                margin: 30px 0 60px 0;
+                margin: 15px 0 60px 0;
                 padding: 12px 0;
             }
 
@@ -814,7 +796,7 @@
             .services-marquee {
                 font-size: 30px;
                 padding: 12px 0;
-                margin: 20px 0 40px 0;
+                margin: 10px 0 40px 0;
             }
 
             .footer {
@@ -824,10 +806,6 @@
 
             .service-icon {
                 height: 150px;
-            }
-
-            .service-icon::before {
-                font-size: 3rem;
             }
 
             .services-grid {
@@ -921,17 +899,6 @@
             transform: scale(1.05);
             transition: transform 0.5s ease;
         }
-
-        .services-title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #000;
-            text-align: center;
-            margin-bottom: 80px;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
     </style>
 </head>
 <body>
@@ -940,8 +907,8 @@
             <div class="logo">SYLESH VEMURI ©</div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#home" class="active">HOME</a></li>
-                    <li><a href="#worksamples">WORKSAMPLES</a></li>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="worksampleshomepage.html">WORKSAMPLES</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
                 </ul>
             </nav>
@@ -951,86 +918,59 @@
     <main class="main-container">
         <div class="left-section">
             <p class="tagline">
-                UNE APPROCHE SUR-MESURE DU BRANDING,<br>
-                POUR LES MARQUES QUI OSENT ÊTRE<br>
-                DIFFÉRENTES.
+                I used to write 47-slide PowerPoints that put executives to sleep. Then I discovered copywriting—and suddenly those same executives were asking for more of whatever that was. Turns out, people don't want to be presented to. They want to be talked with. Now I craft copy that feels like your smartest friend explaining why you absolutely need this thing in your life. Because the best sales happen when it doesn't feel like selling.
             </p>
-            
             <p class="location-text">
-                Des marques accompagnées aux quatre coins du monde —<br>
-                France, Suisse, États-Unis, Sénégal, Madagascar, Côte d'Ivoire
+                I am just one mail away —
             </p>
-            
             <h1 class="main-title">
                 <span class="title-line">SYLESH Vemuri<span class="copyright-symbol">©</span></span>
             </h1>
         </div>
 
         <div class="right-section">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face" 
-                 alt="Portrait professionnel" 
-                 class="hero-image">
+            <img src="syleshindexpng.jpg" alt="Portrait of Sylesh Vemuri" class="hero-image">
         </div>
     </main>
 
     <div class="services-marquee">
-        <div class="marquee-text">COPYWRITER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp COPYWRITER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp COPYWRITER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp COPYWRITER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp COPYWRITER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp COPYWRITER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp COPYWRITER</div>
+        <div class="marquee-text"> | AD COPY | SALES | EMAIL SEQUENCING | LANDING PAGES | COPYWRITER | </div>
     </div>
 
     <section class="services-section" id="services">
         <div class="container">
-            <h1 class="services-title">
-                SERVICES
-            </h1>
-
+            <h1 class="services-title">EXPERT IN</h1>
             <div class="services-grid">
                 <div class="service-item">
                     <div class="service-icon">
-                        <div class="icon-discovery"></div>
+                        <img src="salesdrivenemailimg.jpg.png" alt="Email icon">
                     </div>
                     <div class="service-content">
-                        <h2 class="service-title">Sales Driven Email Copy & Strategic Sequencing</h2>
+                        <h2 class="service-title">Sales Driven Email Copy</h2>
                         <p class="service-description">
-                            We create targeted, persuasive email campaigns designed to engage your audience and drive sales. 
-                            Our strategic sequencing ensures every email builds momentum, nurtures leads, and maximizes conversions.
+                            Boring emails get deleted. Mine get results. I craft sales emails that cut through inbox noise with personality, urgency, and irresistible offers. Whether it's launching a product, promoting a sale, or nurturing leads into buyers, my emails turn subscribers into customers—and customers into repeat buyers.
                         </p>
                     </div>
                 </div>
-
                 <div class="service-item reverse">
                     <div class="service-icon">
-                        <div class="icon-design"></div>
+                        <img src="salesdrivenemailimg.jpg.png" alt="Social media ad icon">
                     </div>
                     <div class="service-content">
                         <h2 class="service-title">Direct Response Ad Copy for Social Media Campaigns</h2>
                         <p class="service-description">
-                            Crafting powerful ad copy that captures attention and compels immediate action. 
-                            From Facebook to Instagram, our direct response ads are optimized to boost engagement and ROI.
+                            Your social media ads have 3 seconds to stop the scroll and 30 seconds to make the sale. I write copy that hooks attention, builds desire, and drives immediate action—whether that's clicks, sign-ups, or purchases. Every word is chosen to convert browsers into buyers, not just boost your brand awareness.
                         </p>
                     </div>
                 </div>
-
                 <div class="service-item">
                     <div class="service-icon">
-                        <div class="icon-delivery"></div>
+                        <img src="lpcopylogoimgjpg.png" alt="Landing page icon">
                     </div>
                     <div class="service-content">
-                        <h2 class="service-title">High Converting Sales Video Ad Scripts & Persuasive Landing Page Copy</h2>
+                        <h2 class="service-title">High-Converting Landing Page Copy</h2>
                         <p class="service-description">
-                            We develop compelling video scripts and landing page copy that captivate viewers and convert visitors, 
-                            turning interest into sales with persuasive messaging tailored to your audience.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-item reverse">
-                    <div class="service-icon">
-                        <div class="icon-design"></div>
-                    </div>
-                    <div class="service-content">
-                        <h2 class="service-title">Direct Response Ad Copy for Social Media Campaigns</h2>
-                        <p class="service-description">
-                            Crafting powerful ad copy that captures attention and compels immediate action. 
-                            From Facebook to Instagram, our direct response ads are optimized to boost engagement and ROI.
+                            A landing page is your digital storefront. I create compelling copy that grabs visitors, keeps them engaged, and turns clicks into conversions. From clear headlines to persuasive CTAs, my landing pages are built to maximize ROI and drive measurable results.
                         </p>
                     </div>
                 </div>
@@ -1039,50 +979,38 @@
     </section>
 
     <section class="clients-section" id="clients">
-        <h1 class="clients-title">Clients I Worked With</h1>
+        <h1 class="clients-title">Real Work. Real Brands.</h1>
         <div class="clients-container">
             <button class="nav-arrow arrow-left" onclick="prevClient()">‹</button>
-            
             <div class="client-item active">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=300&fit=crop" alt="Client 1 Project" class="client-image">
+                <img src="sarthakrahul.jpg.png" alt="Client 1 Project" class="client-image">
                 <div class="client-content">
                     <p class="client-text">
-                        Collaborated on a dynamic email campaign that boosted engagement by 40%, delivering targeted messaging that resonated with their audience and drove significant conversions.
+                        "My lead generation emails were getting ignored until Sylesh rewrote them. Now we're getting more responses and actual qualified leads."
                     </p>
-                    <p class="client-attribution">- Aman Gupta</p>
+                    <p class="client-attribution">— Sarthak Rahul, website designer</p>
                 </div>
             </div>
-            
             <div class="client-item">
-                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Client 2 Project" class="client-image">
+                <img src="407581009_1270624286938210_1804289103198847238_n.jpg" alt="Client 2 Project" class="client-image">
                 <div class="client-content">
                     <p class="client-text">
-                        Crafted compelling social media ad copy that doubled click-through rates, driving significant ROI for their latest product launch and establishing stronger brand presence.
+                        "Our follow-up emails used to get ignored. Now they get meetings. Sylesh knows how to write copy that sells without being salesy."
                     </p>
-                    <p class="client-attribution">- Priya Sharma</p>
+                    <p class="client-attribution">— Kashish Mangwani, content creator</p>
                 </div>
             </div>
-            
             <div class="client-item">
-                <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&h=300&fit=crop" alt="Client 3 Project" class="client-image">
+                <img src="423508899_1128686658124302_9138534789838970508_n.jpg" alt="Client 3 Project" class="client-image">
                 <div class="client-content">
                     <p class="client-text">
                         Developed high-converting landing page copy that increased conversion rates by 65%, transforming visitor engagement into measurable business growth.
                     </p>
-                    <p class="client-attribution">- Raj Patel</p>
+                    <p class="client-attribution">— cherry - youtube contentcreator</p>
+                </div>
+            
                 </div>
             </div>
-            
-            <div class="client-item">
-                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=300&fit=crop" alt="Client 4 Project" class="client-image">
-                <div class="client-content">
-                    <p class="client-text">
-                        Created persuasive video ad scripts that generated over 2 million views and significantly improved brand awareness across multiple social media platforms.
-                    </p>
-                    <p class="client-attribution">- Sarah Johnson</p>
-                </div>
-            </div>
-            
             <button class="nav-arrow arrow-right" onclick="nextClient()">›</button>
         </div>
     </section>
@@ -1093,7 +1021,6 @@
                 <div class="testimonials-subtitle">CLIENT REVIEWS</div>
                 <h2 class="testimonials-title">NO NEED TO ADD MORE, THEY'VE ALREADY SAID IT.</h2>
             </div>
-
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">
@@ -1104,14 +1031,13 @@
                         <span class="star">★</span>
                     </div>
                     <p class="testimonial-text">
-                        "Working with Sylesh transformed our brand with a strategic approach that exceeded our initial vision and resonated with our audience."
+                        "Sylesh combines exceptional writing skills with genuine professionalism. Reliable, creative, and produces work that always exceeds expectations. A pleasure to work with him."
                     </p>
                     <div class="client-info">
-                        <div class="client-name">Marie Johnson</div>
-                        <div class="client-position">Creative Director, Studio Blanc</div>
+                        <div class="client-name">Chandan Stavik</div>
+                        <div class="client-position">Content Creator</div>
                     </div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="stars">
                         <span class="star">★</span>
@@ -1124,24 +1050,7 @@
                     </p>
                     <div class="client-info">
                         <div class="client-name">Lucie Dupont</div>
-                        <div class="client-position">Marketing Lead, Éclat Paris</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <p class="testimonial-text">
-                        "The creativity and dedication Sylesh showed in crafting our brand identity were truly impressive and impactful."
-                    </p>
-                    <div class="client-info">
-                        <div class="client-name">Ahmed Khalil</div>
-                        <div class="client-position">CEO, Horizon Ventures</div>
+                        <div class="client-position">Tech Income, Content Creator</div>
                     </div>
                 </div>
             </div>
@@ -1152,7 +1061,6 @@
         <section class="contact-section" id="contact">
             <div class="contact-container">
                 <h1 class="heading">Let's get</h1>
-                
                 <form id="contactForm">
                     <div class="form-container">
                         <div class="form-left">
@@ -1163,25 +1071,21 @@
                             <textarea id="message" placeholder="Message" required></textarea>
                         </div>
                     </div>
-                    
                     <div class="button-bar">
                         <button type="submit">Send message</button>
                     </div>
                 </form>
-                
                 <h2 class="connected-text">connected</h2>
-                
                 <div class="social-section">
                     <h3>Our social media</h3>
                     <div class="social-links">
-                        <a href="#linkedin">Linkedin</a>
-                        <a href="mailto:hello@retler.com">hello@retler.com</a>
+                        <a href="https://linkedin.com">Linkedin</a>
+                        <a href="syleshvemuri@gmail.com">syleshvemuri@gmail.com</a>
                         <a href="#schedule">Schedule a call</a>
                     </div>
                 </div>
             </div>
         </section>
-
         <footer class="footer">
             <div class="footer-text">SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI</div>
         </footer>
@@ -1196,7 +1100,6 @@
         function showClient(index) {
             clientItems.forEach((item, i) => {
                 item.classList.remove('active', 'prev', 'next');
-                
                 if (i === index) {
                     item.classList.add('active');
                 } else if (i < index) {
@@ -1218,13 +1121,13 @@
         }
 
         showClient(currentClientIndex);
-
         setInterval(nextClient, 5000);
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth'
@@ -1236,9 +1139,8 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallax = document.querySelector('.main-title');
-            const speed = scrolled * 0.5;
-            
             if (parallax) {
+                const speed = scrolled * 0.5;
                 parallax.style.transform = `translateY(${speed}px)`;
             }
         });
@@ -1254,7 +1156,6 @@
                 const rect = title.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
                 if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
                     const moveX = (x - rect.width / 2) * 0.02;
                     const moveY = (y - rect.height / 2) * 0.02;
@@ -1285,7 +1186,6 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const serviceItems = document.querySelectorAll('.service-item');
-
             serviceItems.forEach((item, index) => {
                 const speed = scrolled * (0.1 + index * 0.05);
                 if (item) {
@@ -1299,7 +1199,6 @@
             item.addEventListener('mouseenter', () => {
                 item.style.transition = 'transform 0.3s ease';
             });
-
             item.addEventListener('mouseleave', () => {
                 item.style.transition = 'transform 0.3s ease';
             });
@@ -1307,28 +1206,22 @@
 
         function sendToGmail() {
             const form = document.getElementById('contactForm');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                };
-
-                const subject = encodeURIComponent('New Contact Form Submission');
-                const body = encodeURIComponent(`
-                    Name: ${formData.name}
-                    Email: ${formData.email}
-                    Message: ${formData.message || 'No message'}
-                    Submitted on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
-                `);
-
-                window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=syleshvemuri@gmail.com&su=${subject}&body=${body}`;
-            });
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        message: document.getElementById('message').value
+                    };
+                    const subject = encodeURIComponent('New Contact Form Submission');
+                    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message || 'No message'}\nSubmitted on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
+                    window.location.href = `mailto:syleshvemuri@gmail.com?subject=${subject}&body=${body}`;
+                });
+            }
         }
 
-        window.onload = sendToGmail;
+        sendToGmail();
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worksamples</title>
+    <title>Landing Pages - Sylesh Vemuri</title>
     <style>
         * {
             margin: 0;
@@ -18,11 +18,11 @@
 
         /* Blue top section */
         .hero-section {
-    background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
-    height: 60vh;
-    color: white;
-    position: relative;
-}
+            background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
+            height: 60vh;
+            color: white;
+            position: relative;
+        }
 
         .header {
             background: #fff;
@@ -94,7 +94,7 @@
         }
 
         .hero-title {
-            font-size: 140px;
+            font-size: 120px;
             font-weight: 700;
             line-height: 0.8;
             margin: 0;
@@ -144,6 +144,11 @@
             font-size: 12px;
             opacity: 0.7;
             cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .discover-more:hover {
+            opacity: 1;
         }
 
         .scroll-icon {
@@ -164,6 +169,12 @@
             height: 6px;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 1px;
+            animation: scrollAnimation 2s infinite;
+        }
+
+        @keyframes scrollAnimation {
+            0%, 100% { opacity: 0; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
         }
 
         /* White bottom section */
@@ -174,96 +185,124 @@
         }
 
         .main-content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .brief-section {
-            margin-top: 80px;
+        .project-section {
+            margin-bottom: 120px;
         }
 
-        .brief-title {
-            font-size: 32px;
+        .project-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .project-container.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .project-container.reverse .project-image {
+            order: 2;
+        }
+
+        .project-container.reverse .project-content {
+            order: 1;
+        }
+
+        .project-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-content {
+            padding: 20px 0;
+        }
+
+        .project-title {
+            font-size: 48px;
             font-weight: 700;
             color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .project-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
             margin-bottom: 30px;
         }
 
-        .brief-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
+        .project-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4285F4;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e8f0fe;
+            color: #1565c0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .section-divider {
             width: 100%;
             height: 1px;
             background: #e0e0e0;
-            margin: 60px 0;
-        }
-
-        .copies-container {
-            margin-top: 80px;
-        }
-
-        .copy-card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .copy-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .copy-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .copy-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .copy-text {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .copy-text:last-child {
-            margin-bottom: 0;
-        }
-
-        .email-sample {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #444;
-            position: relative;
-        }
-
-        .email-sample::before {
-            content: "📧 Email Preview";
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            background: #fafafa;
-            padding: 0 8px;
-            font-size: 11px;
-            color: #666;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 80px 0;
         }
 
         .footer {
@@ -275,7 +314,7 @@
             white-space: nowrap;
             overflow: hidden;
             margin-top: 0;
-            font-size: 240px;
+            font-size: 180px;
         }
 
         .footer-text {
@@ -288,9 +327,31 @@
             100% { transform: translateX(-100%); }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            .project-container,
+            .project-container.reverse {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .project-container.reverse .project-image,
+            .project-container.reverse .project-content {
+                order: initial;
+            }
+
+            .project-stats {
+                justify-content: center;
+            }
+
             .hero-title {
                 font-size: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 60px;
             }
             
             .header, .hero-content, .video-bridge, .content-section {
@@ -306,6 +367,19 @@
 
             .nav-links {
                 gap: 20px;
+            }
+
+            .project-title {
+                font-size: 36px;
+            }
+
+            .project-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer {
+                font-size: 120px;
             }
         }
     </style>
@@ -327,7 +401,7 @@
     <!-- Blue top section -->
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Rerter</h1>
+            <h1 class="hero-title">LANDING PAGES</h1>
         </div>
     </div>
 
@@ -335,7 +409,7 @@
     <div class="video-bridge">
         <div class="video-container">
             <div class="video-mockup">
-                <img src="https://via.placeholder.com/800x450" alt="Placeholder Image" style="width: 100%; height: auto; object-fit: cover;">
+                <img src="landingpagetopimage.jpg" alt="Landing Pages Overview" style="width: 100%; height: 100%; object-fit: cover;">
                 
                 <div class="discover-more">
                     <span>Discover more</span>
@@ -348,82 +422,101 @@
     <!-- White bottom section -->
     <div class="content-section">
         <div class="main-content">
-            <div class="brief-section">
-                <h3 class="brief-title">Brief</h3>
-                <p class="brief-text">
-                    An innovative site was intended to be created where work could be showcased behind a brand name. The whole idea revolves around starting an agency/design studio from scratch, with the goal of attracting companies interested in hiring third-party providers for design services. The site should feature a clean design, clear user flow, and a friendly user experience, while maintaining a visually appealing look and feel. It should not appear as just another template and must incorporate the brand's aesthetics. The goal is for a unique personality to be brought to the site.
-                </p>
+            <!-- Project 1 -->
+            <div class="project-section">
+                <div class="project-container">
+                    <div class="project-image">
+                        <img src="fitnesslandingpage.png" alt="Orange Theory Fitness Landing Page">
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">ORANGE THEORY FITNESS LANDING PAGE</h2>
+                        <p class="project-subtitle">High-Converting Landing Page Copy</p>
+                        <p class="project-description">
+                            This high-converting landing page for Orange Theory Fitness demonstrates strategic design focused on driving membership conversions. The design leverages Orange Theory's signature brand colors and high-energy aesthetic to create an immersive experience that mirrors the intensity of their workouts.
+                        </p>
+                        <p class="project-description">
+                            <strong>Key Design & Conversion Elements:</strong> The page features a bold, action-oriented hero section with compelling calls-to-action that immediately communicate the value proposition. Strategic use of social proof through member testimonials and success stories builds trust and credibility. The layout follows proven conversion optimization principles with a clear visual hierarchy that guides users toward the primary conversion goal.
+                        </p>
+                        <p class="project-description">
+                            <strong>Technical Implementation:</strong> Clean, responsive design ensures optimal performance across all devices, with fast loading times critical for reducing bounce rates. The design creates urgency and energy, while maintaining excellent readability and accessibility standards.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Fitness</span>
+                            <span class="tag">Membership</span>
+                            <span class="tag">High-Energy</span>
+                            <span class="tag">Conversion</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="section-divider"></div>
 
-            <div class="copies-container">
-                <div class="copy-card">
-                    <h4 class="copy-title">Email 1: SaaS Product Launch Sequence</h4>
-                    <p class="copy-text"><strong>Problem:</strong> A new B2B SaaS platform needed to generate qualified leads and drive sign-ups for its beta program launch.</p>
-                    <p class="copy-text"><strong>Strategy:</strong> Developed a 3-email sequence focusing on problem-agitation-solution, highlighting key features and social proof in each stage. Aimed for strong CTAs and clear value propositions with personalized messaging.</p>
-                    <p class="copy-text"><strong>Subject:</strong> "Your Workflow is Broken (Here's How We Fix It)"</p>
-                    <div class="email-sample">
-                        Hi [Name],<br><br>
-                        Tired of juggling 12 different tools just to get through your Tuesday?<br><br>
-                        We built [Product] because we were frustrated too. Join 500+ beta users who've already streamlined their workflow and saved 4+ hours per week.<br><br>
-                        ✅ One dashboard for everything<br>
-                        ✅ 50+ integrations ready to go<br>
-                        ✅ Set up in under 5 minutes<br><br>
-                        Ready to reclaim your time?<br><br>
-                        [Get Beta Access - Free for 30 Days]<br><br>
-                        Best,<br>
-                        Sarah
+            <!-- Project 2 -->
+            <div class="project-section">
+                <div class="project-container reverse">
+                    <div class="project-image">
+                        <img src="WWGOA.webp" alt="Woodworkers Guild of America Landing Page">
                     </div>
-                    <p class="copy-text"><strong>Intended Outcome:</strong> Achieved 18% open rate and 8% click-through rate, driving 250+ qualified beta sign-ups in the first week.</p>
+                    <div class="project-content">
+                        <h2 class="project-title">WOODWORKERS GUILD OF AMERICA LANDING PAGE</h2>
+                        <p class="project-subtitle">Conversion Landing Page</p>
+                        <p class="project-description">
+                            This conversion-optimized landing page for Woodworkers Guild of America showcases design for the premium woodworking tools market. The design captures the craftsmanship and heritage associated with fine woodworking while maintaining a modern, professional aesthetic that appeals to both hobbyist and professional woodworkers.
+                        </p>
+                        <p class="project-description">
+                            <strong>Key Design & Conversion Elements:</strong> The page features a rustic, authentic design palette that reflects natural wood tones and traditional craftsmanship values. Raw typography and old-school design elements create an authentic workshop atmosphere that resonates with the target audience's passion for traditional woodworking.
+                        </p>
+                        <p class="project-description">
+                            <strong>User Experience Strategy:</strong> Clean, intuitive navigation guides visitors through carefully curated product selections, with detailed descriptions that educate and inform purchasing decisions. The layout balances product discovery with lead generation, using strategic placement of email capture forms at high-engagement points throughout the user journey.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Woodworking</span>
+                            <span class="tag">Premium Tools</span>
+                            <span class="tag">Craftsmanship</span>
+                            <span class="tag">Lead Generation</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="copy-card">
-                    <h4 class="copy-title">Email 2: E-commerce Flash Sale Campaign</h4>
-                    <p class="copy-text"><strong>Problem:</strong> An online fashion retailer needed to clear end-of-season inventory and boost sales for specific product categories within 48 hours.</p>
-                    <p class="copy-text"><strong>Strategy:</strong> Crafted a scarcity-driven email series with clear discount offers, urgency-building language, and direct links to product categories. Used countdown timers and limited-time messaging.</p>
-                    <p class="copy-text"><strong>Subject:</strong> "FINAL 24 HOURS: 60% Off Everything (Really Everything)"</p>
-                    <div class="email-sample">
-                        [Name], This is it.<br><br>
-                        The biggest sale of the year ends tomorrow at midnight.<br><br>
-                        Your cart is waiting, but sizes are flying off the shelves:<br><br>
-                        🔥 60% off ALL dresses<br>
-                        🔥 60% off ALL shoes<br>
-                        🔥 60% off ALL accessories<br><br>
-                        No exclusions. No minimum purchase. No games.<br><br>
-                        [SHOP NOW - 24 HOURS LEFT]<br><br>
-                        Don't let your favorites sell out,<br>
-                        The Team
+            <div class="section-divider"></div>
+
+            <!-- Project 3 -->
+            <div class="project-section">
+                <div class="project-container">
+                    <div class="project-image">
+                        <img src="travelguidelp.jpg" alt="Travel Guide Landing Page">
                     </div>
-                    <p class="copy-text"><strong>Intended Outcome:</strong> Generated 32% open rate and 15% click-through rate, resulting in $125K revenue increase during the 48-hour campaign period.</p>
+                    <div class="project-content">
+                        <h2 class="project-title">TRAVEL GUIDE SERVICE</h2>
+                        <p class="project-subtitle">Destination Marketing Landing Page</p>
+                        <p class="project-description">
+                            Crafted conversion-focused copy for a premium travel guide service targeting luxury travelers. The challenge was creating emotional connection with wanderlust while driving bookings for high-value travel experiences. Used stunning visuals, destination storytelling, and clear value propositions to drive consultation bookings.
+                        
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Travel</span>
+                            <span class="tag">Luxury</span>
+                            <span class="tag">Consultation</span>
+                            <span class="tag">Experience</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="copy-card">
-                    <h4 class="copy-title">Email 3: Consulting Service Lead Nurture</h4>
-                    <p class="copy-text"><strong>Problem:</strong> A business consulting firm needed to convert webinar attendees into high-value discovery calls and nurture leads through a longer sales cycle.</p>
-                    <p class="copy-text"><strong>Strategy:</strong> Designed an educational follow-up sequence providing additional value from the webinar while subtly reinforcing expertise. Included case studies and clear next steps for consultation.</p>
-                    <p class="copy-text"><strong>Subject:</strong> "The Growth Strategy That Added $2M in Revenue [Webinar Follow-up]"</p>
-                    <div class="email-sample">
-                        Hi [Name],<br><br>
-                        Thanks for joining yesterday's webinar on scaling revenue.<br><br>
-                        As promised, here's the exact 3-step framework we used to help TechCorp grow from $5M to $7M in just 8 months:<br><br>
-                        Step 1: Identify your highest-value customer segments<br>
-                        Step 2: Create targeted messaging for each segment<br>
-                        Step 3: Build automated nurture sequences<br><br>
-                        Want to see how this applies to YOUR business?<br><br>
-                        [Book Your Free Strategy Call]<br><br>
-                        We'll analyze your current strategy and show you exactly where the biggest opportunities are.<br><br>
-                        Talk soon,<br>
-                        Michael Chen
+            <div class="section-divider"></div>
+
+           
+                        </div>
                     </div>
-                    <p class="copy-text"><strong>Intended Outcome:</strong> Converted 12% of webinar attendees into discovery calls, with 65% of those calls resulting in $15K+ consulting engagements.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="footer-text">SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI</div>
+        <div class="footer-text">SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI © SYLESH VEMURI ©</div>
     </footer>
 
     <script>
@@ -431,6 +524,29 @@
             document.querySelector('.content-section').scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project sections
+        document.querySelectorAll('.project-section').forEach((section, index) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
+            observer.observe(section);
         });
     </script>
 </body>
